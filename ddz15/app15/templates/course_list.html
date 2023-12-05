@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course List</title>
+</head>
+<body>
+    <h1>Course List</h1>
+    <div><a href="{%url 'create_course'%}">Create course</a></div>
+    {% for course in course_list %}
+        <p>{{course}} -
+            <a href="{%url 'course_detail' course.pk%}">Detail</a> -
+            <a href="{%url 'update_course' course.pk%}">Update</a> -
+            <a href="{%url 'delete_course' course.pk%}">Delete</a>
+        </p>
+    {% endfor %}
+    
+</body>
+</html>

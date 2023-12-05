@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Module Detail</h1>
+<p>{{module}}</p>
+<p>{{module.description}}</p>
+<p>{{module.avarge_time}}</p>
+
+<a href="{%url 'course_detail' cb_pk%}">To course detail</a>
+<div><a href="{%url 'create_lesson' module.pk%}">Create lesson</a></div>
+{% for lesson in lesson_list %}
+    <p>{{lesson}} -
+        <a href="{%url 'lesson_detail' lesson.pk%}">Detail</a> -
+        <a href="{%url 'update_lesson' lesson.pk%}">Update</a> -
+        <a href="#">Delete</a>
+    </p>
+{% endfor %}
+</body>
+</html>
